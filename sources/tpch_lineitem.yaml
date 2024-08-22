@@ -24,3 +24,5 @@ rules:
   expression: "([This].l_extendedprice - [This].l_tax - [This].l_discount)*100"
 - name: "nation_key"
   expression: "[tpch_nation].n_nationkey"
+- name: "max_receipt_date_by_nation_plus_30"
+  expression: date_add(MAX([This].l_receiptdate),30) OVER (PARTITION BY [This].nation_key)
