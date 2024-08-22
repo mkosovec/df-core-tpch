@@ -11,3 +11,6 @@ raw_attributes:
 - c_name string
 - c_nationkey long
 - c_phone string
+rules:
+  - name: max_receipt_date_by_customer
+    expression: MAX([tpch_orders].max_receipt_date_by_order)

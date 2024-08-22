@@ -12,3 +12,6 @@ raw_attributes:
 - o_orderstatus string
 - o_shippriority int
 - o_totalprice decimal
+rules:
+  - name: max_receipt_date_by_order
+    expression: MAX([tpch_lineitem].l_receiptdate)

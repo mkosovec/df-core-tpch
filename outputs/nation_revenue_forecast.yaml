@@ -4,8 +4,7 @@ columns:
 - nation_key long
 - line_item_receipt_date date
 channels:
-- source_name: tpch_lineitem
-  operation_type: "Aggregate"
+- source_name: tpch_nation
   mappings:
-  - nation_key nation_key
-  - max_receipt_date_by_nation_plus_30 line_item_receipt_date
+  - n_nationkey nation_key
+  - max_receipt_date_by_nation line_item_receipt_date

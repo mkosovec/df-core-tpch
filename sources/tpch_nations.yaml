@@ -7,3 +7,6 @@ raw_attributes:
 - n_name string
 - n_nationkey long
 - n_regionkey long
+rules:
+  - name: max_receipt_date_by_nation
+    expression: MAX([tpch_customer].max_receipt_date_by_customer)
