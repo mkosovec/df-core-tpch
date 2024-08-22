@@ -1,0 +1,11 @@
+---
+output_name: nation_revenue_forecast 
+columns:
+- nation_key long
+- line_item_receipt_date date
+channels:
+- source_name: tpch_lineitem
+  operation_type: "Aggregate"
+  mappings:
+  - nation_key nation_key
+  - max_receipt_date_by_nation_plus_30 line_item_receipt_date
