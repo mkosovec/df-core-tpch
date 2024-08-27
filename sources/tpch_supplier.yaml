@@ -1,16 +1,15 @@
 ---
-source_name: "tpch_customer"
-source_table: "samples.tpch.customer"
-target_table: "enriched_customer"
+source_name: "tpch_supplier"
+source_table: "samples.tpch.supplier"
+target_table: "enriched_supplier"
 raw_attributes:
-- c_acctbal decimal
-- c_address string
-- c_comment string
-- c_custkey long
-- c_mktsegment string
-- c_name string
-- c_nationkey long
-- c_phone string
+- s_suppkey long
+- s_name string
+- s_address string
+- s_nationkey long
+- s_phone string
+- s_acctbal decimal
+- s_comment string
 rules:
 - name: n_nationkey
   expression: "[tpch_nation].n_nationkey"

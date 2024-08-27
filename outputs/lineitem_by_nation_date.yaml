@@ -8,6 +8,6 @@ channels:
 - source_name: tpch_lineitem
   operation_type: "Aggregate"
   mappings:
-  - nation_key nation_key
+  - c_n_nationkey nation_key
   - l_receiptdate line_item_receipt_date
   - sum(net_price_int) line_item_net_price_100

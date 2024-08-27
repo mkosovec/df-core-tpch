@@ -1,0 +1,202 @@
+---
+output_name: mrt_obt 
+columns:
+- Line_Item_Comment string
+- Line_Item_Commit_Date date
+- Line_Item_Discount decimal
+- Line_Item_Extended_Price decimal
+- Line_Item_Line_Number int
+- Line_Item_Line_Status string
+- Line_Item_Quantity decimal
+- Line_Item_Receipt_Date date
+- Line_Item_Return_Flag string
+- Line_Item_Ship_Date date
+- Line_Item_Ship_Instruct string
+- Line_Item_Ship_Mode string
+- Line_Item_Tax decimal
+- Line_Item_Receipt_Date_YearMonth string
+- Revenue decimal
+- Revenue_No_Returns decimal
+- Order_Clerk string
+- Order_Comment string
+- Order_Date date
+- Order_Key long
+- Order_Priority string
+- Order_Status string
+- Order_Ship_Priority int
+- Order_Total_Price decimal
+- Customer_Account_Balance decimal
+- Customer_Address string
+- Customer_Comment string
+- Customer_Key long
+- Customer_Market_Segment string
+- Customer string
+- Customer_Phone string
+- Customer_Nation_Comment string
+- Customer_Nation string
+- Customer_Nation_Key long
+- Customer_Region_Key long
+- Customer_Region string
+- Customer_Region_Comment string
+- Part_Supplier_Available_Quantity int
+- Part_Supplier_Supply_Cost decimal
+- Part_Supplier_Comment string
+- Part_Key long
+- Part string
+- Part_Manufacturer string
+- Part_Brand string
+- Part_Type string
+- Part_Size int
+- Part_Container string
+- Part_Retail_Price decimal
+- Part_Comment string
+- Supplier_Key long
+- Supplier string
+- Supplier_Address string
+- Supplier_Nation_Key long
+- Supplier_Phone string
+- Supplier_Account_Balance decimal
+- Supplier_Comment string
+- Supplier_Nation_Comment string
+- Supplier_Nation string
+- Supplier_Nation_Key long
+- Supplier_Region_Key long
+- Supplier_Region string
+- Supplier_Region_Comment string
+channels:
+- source_name: tpch_lineitem
+  mappings:
+  - l_comment Line_Item_Comment
+  - l_commitdate Line_Item_Commit_Date 
+  - l_discount Line_Item_Discount 
+  - l_extendedprice Line_Item_Extended_Price 
+  - l_linenumber Line_Item_Line_Number 
+  - l_linestatus Line_Item_Line_Status 
+  - l_quantity Line_Item_Quantity 
+  - l_receiptdate Line_Item_Receipt_Date 
+  - l_returnflag Line_Item_Return_Flag 
+  - l_shipdate Line_Item_Ship_Date 
+  - l_shipinstruct Line_Item_Ship_Instruct 
+  - l_shipmode Line_Item_Ship_Mode 
+  - l_tax Line_Item_Tax
+  - l_receiptdate_yearmonth Line_Item_Receipt_Date_YearMonth
+  - revenue Revenue
+  - revenue_no_returns Revenue_No_Returns
+  - o_orderkey Order_Key
+  - o_orderstatus Order_Status
+  - o_orderdate Order_Date
+  - o_orderpriority Order_Priority
+  - o_clerk Order_Clerk
+  - o_shippriority Order_Ship_Priority
+  - o_comment Order_Comment
+  - c_custkey Customer_Key
+  - c_name Customer
+  - c_address Customer_Address
+  - c_phone Customer_Phone
+  - c_mktsegment Customer_Market_Segment
+  - c_comment Customer_Comment
+  - ps_comment Part_Supplier_Comment
+  - p_name Part
+  - p_mfgr Part_Manufacturer
+  - p_brand Part_Brand
+  - p_type Part_Type
+  - p_container Part_Container
+  - p_comment Part_Comment
+  - s_name Supplier
+  - s_address Supplier_Address
+  - s_phone Supplier_Phone
+  - s_comment Supplier_Comment
+  - c_n_name Customer_Nation
+  - c_n_comment Customer_Nation_Comment
+  - c_r_regionkeyCustomer_Region_Key
+  - c_r_name Customer_Region
+  - c_r_commentCustomer_Region_Comment
+  - s_n_nationkey Supplier_Nation_Key
+  - s_n_name Supplier_Nation
+  - s_n_comment Supplier_Nation_Comment
+  - s_r_regionkey Supplier_Region_Key
+  - s_r_name Supplier_Region
+  - s_r_comment Supplier_Region_Comment
+- source_name: tpch_orders
+  mappings:
+  - o_orderkey Order_Key
+  - o_orderstatus Order_Status
+  - o_orderdate Order_Date
+  - o_orderpriority Order_Priority
+  - o_clerk Order_Clerk
+  - o_shippriority Order_Ship_Priority
+  - o_comment Order_Comment
+  - o_totalprice Order_Total_Price
+  - c_custkey Customer_Key
+  - c_name Customer_Name
+  - c_address Customer_Address
+  - c_phone Customer_Phone
+  - c_mktsegment Customer_Market_Segment
+  - c_comment Customer_Comment
+  - n_nationkey Customer_Nation_Key
+  - n_name Customer_Nation
+  - n_comment Customer_Nation_Comment
+  - r_regionkey Customer_Region_Key
+  - r_name Customer_Region
+  - r_comment Customer_Region_Comment
+- source_name: tpch_partsupp
+  mappings:
+  - ps_partkey Part_Key
+  - ps_suppkey Supplier_Key
+  - ps_availqty Part_Supplier_Available_Quantity
+  - ps_supplycost Part_Supplier_Supply_Cost
+  - ps_comment Part_Supplier_Comment
+  - s_name Supplier
+  - s_address Supplier_Address
+  - s_phone Supplier_Phone
+  - s_comment Supplier_Comment
+  - n_nationkey Supplier_Nation_Key
+  - n_name Supplier_Nation
+  - n_comment Supplier_Nation_Comment
+  - r_regionkey Supplier_Region_key
+  - r_name Supplier_Region
+  - r_comment Supplier_Region_Comment
+  - p_name Part
+  - p_mfgr Part_Manufacturer
+  - p_brand Part_Brand
+  - p_type Part_Type
+  - p_container Part_Container
+  - p_comment Part_Comment
+- source_name: tpch_part
+  - p_partkey Part_Key
+  - p_name Part_Name
+  - p_mfgr Part_Manufacturer
+  - p_brand Part_Brand
+  - p_type Part_Type
+  - p_size Part_Size
+  - p_container Part_Container
+  - p_retailprice Part_Retail_Price
+  - p_comment Part_Comment
+- source_name: tpch_supplier
+  - s_suppkey Supplier_Key
+  - s_name Supplier
+  - s_address Supplier_Address
+  - s_phone Supplier_Phone
+  - s_acctbal Supplier_Account_Balance
+  - s_comment Supplier_Comment
+  - n_nationkey Supplier_Nation_Key
+  - n_name Supplier_Nation
+  - n_comment Supplier_Nation_Comment
+  - r_regionkey Supplier_Region_Key
+  - r_name Supplier_Region
+  - r_comment Supplier_Region_Comment
+- source_name: tpch_customer
+  - c_acctbal Customer_Account_Balance
+  - c_address Customer_Address
+  - c_comment Customer_Comment
+  - c_custkey Customer_Key
+  - c_mktsegment Customer_Market_Segment
+  - c_name Customer
+  - c_nationkey Customer_Nation_Key
+  - c_phone Customer_Phone
+  - n_nationkey Customer_Nation_Key
+  - n_name Customer_Nation
+  - n_comment Customer_Nation_Comment
+  - r_regionkey Customer_Region_Key
+  - r_name Customer_Region
+  - r_comment Customer_Region_Comment
