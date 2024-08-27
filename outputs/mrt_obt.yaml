@@ -59,7 +59,6 @@ columns:
 - Supplier_Comment string
 - Supplier_Nation_Comment string
 - Supplier_Nation string
-- Supplier_Nation_Key long
 - Supplier_Region_Key long
 - Supplier_Region string
 - Supplier_Region_Comment string
@@ -82,7 +81,7 @@ channels:
   - l_receiptdate_yearmonth Line_Item_Receipt_Date_YearMonth
   - revenue Revenue
   - revenue_no_returns Revenue_No_Returns
-  - o_orderkey Order_Key
+  - l_orderkey Order_Key
   - o_orderstatus Order_Status
   - o_orderdate Order_Date
   - o_orderpriority Order_Priority
@@ -108,9 +107,9 @@ channels:
   - s_comment Supplier_Comment
   - c_n_name Customer_Nation
   - c_n_comment Customer_Nation_Comment
-  - c_r_regionkeyCustomer_Region_Key
+  - c_r_regionkey Customer_Region_Key
   - c_r_name Customer_Region
-  - c_r_commentCustomer_Region_Comment
+  - c_r_comment Customer_Region_Comment
   - s_n_nationkey Supplier_Nation_Key
   - s_n_name Supplier_Nation
   - s_n_comment Supplier_Nation_Comment
@@ -128,7 +127,7 @@ channels:
   - o_comment Order_Comment
   - o_totalprice Order_Total_Price
   - c_custkey Customer_Key
-  - c_name Customer_Name
+  - c_name Customer
   - c_address Customer_Address
   - c_phone Customer_Phone
   - c_mktsegment Customer_Market_Segment
@@ -153,7 +152,7 @@ channels:
   - n_nationkey Supplier_Nation_Key
   - n_name Supplier_Nation
   - n_comment Supplier_Nation_Comment
-  - r_regionkey Supplier_Region_key
+  - r_regionkey Supplier_Region_Key
   - r_name Supplier_Region
   - r_comment Supplier_Region_Comment
   - p_name Part
@@ -163,8 +162,9 @@ channels:
   - p_container Part_Container
   - p_comment Part_Comment
 - source_name: tpch_part
+  mappings:
   - p_partkey Part_Key
-  - p_name Part_Name
+  - p_name Part
   - p_mfgr Part_Manufacturer
   - p_brand Part_Brand
   - p_type Part_Type
@@ -173,6 +173,7 @@ channels:
   - p_retailprice Part_Retail_Price
   - p_comment Part_Comment
 - source_name: tpch_supplier
+  mappings:
   - s_suppkey Supplier_Key
   - s_name Supplier
   - s_address Supplier_Address
@@ -186,13 +187,13 @@ channels:
   - r_name Supplier_Region
   - r_comment Supplier_Region_Comment
 - source_name: tpch_customer
+  mappings:
   - c_acctbal Customer_Account_Balance
   - c_address Customer_Address
   - c_comment Customer_Comment
   - c_custkey Customer_Key
   - c_mktsegment Customer_Market_Segment
   - c_name Customer
-  - c_nationkey Customer_Nation_Key
   - c_phone Customer_Phone
   - n_nationkey Customer_Nation_Key
   - n_name Customer_Nation
